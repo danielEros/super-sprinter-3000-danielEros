@@ -37,11 +37,11 @@
             <label for="status">Status</label>
             <br>
             <select id="status" name="status">
-                <option selected>Planning</option>
-                <option>TODO</option>
-                <option>In Progress</option>
-                <option>Review</option>
-                <option>Done</option>
+                <option {% if status==1 %}selected{% endif %}>Planning</option>
+                <option {% if status==2 %}selected{% endif %}>TODO</option>
+                <option {% if status==3 %}selected{% endif %}>In Progress</option>
+                <option {% if status==4 %}selected{% endif %}>Review</option>
+                <option {% if status==5 %}selected{% endif %}>Done</option>
         </p>
         <p>
             <input type="submit" value="{{ submit_title }}">
