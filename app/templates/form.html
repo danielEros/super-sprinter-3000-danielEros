@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title name="title">Super Sprinter 3000{{ title }}</title>
+  </head>
+  <body>
+    <h1>User story manager{{ title }}</h1>
+    <form action="{{ action_target }}" method="post">
+        {% if title == ' - Edit Story' %}
+            <input type=hidden id="id_to_update" name="id_to_update" value="{{ id_to_update }}"
+        {% endif %}
+        <p>
+            <label for="story_title">Story Title</label>
+            <br>
+            <input id="story_title" name="story_title" value="{{ story_title }}" size="45">
+        </p>
+        <p>
+            <label for="user_story">User Story</label>
+            <br>
+            <textarea id="user_story" name="user_story" rows="5" cols="45">{{ user_story }}</textarea>
+        </p>
+        <p>
+            <label for="acceptance_criteria">Acceptance Criteria</label>
+            <br>
+            <textarea id="acceptance_criteria" name="acceptance_criteria" rows="5" cols="45">{{ acceptance_criteria }}</textarea>
+        </p>
+        <p>
+            <label for="business_value">Business Value</label>
+            <br>
+            <input id="business_value" name="business_value" type="number" min="100" max="1500" step="100" value="{{ business_value }}">
+        </p>
+        <p>
+            <label for="estimation">Estimation (h)</label>
+            <br>
+            <input id="estimation" name="estimation" type="number" min="0.5" max="40" step="0.5" value="{{ estimation }}">
+        </p>
+        <p>
+            <label for="status">Status</label>
+            <br>
+            <select id="status" name="status">
+                <option selected>Planning</option>
+                <option>TODO</option>
+                <option>In Progress</option>
+                <option>Review</option>
+                <option>Done</option>
+        </p>
+        <p>
+            <input type="submit" value="{{ submit_title }}">
+        </p>
+    </form>
+  </body>
+</html>

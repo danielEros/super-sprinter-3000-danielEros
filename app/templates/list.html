@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Super Sprinter 3000</title>
+    </head>
+    <body>
+        <h1>User story manager</h1>
+        <form action="story">
+            <input type="submit" value="Add a new User Story">
+        </form>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Story Title</th>
+                <th>User Story</th>
+                <th>Acceptance Criteria</th>
+                <th>Business Value</th>
+                <th>Estimation</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            {% for i in list_table %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>{{ i[1] }}</td>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[3] }}</td>
+                    <td>{{ i[4] }}</td>
+                    <td>{{ i[5] }}h</td>
+                    <td>{{ i[6] }}</td>
+                    <td>
+                        <a href="/story/{{ i[0] }}"><img src="/static/pencil.jpg" id="update_{{ i[0] }}" alt="Update item" height="20" width="20"></a>
+                        <a href="/list?delete_id={{ i[0] }}"><img src="/static/bin.png" id="delete_{{ i[0] }}" alt="Delete item" height="20" width="20"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
