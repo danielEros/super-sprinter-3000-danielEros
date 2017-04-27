@@ -20,7 +20,9 @@ def write_table_to_file(file_name, table):
             file.write(row.replace("\r\n", " ") + "\n")
 
 def add_item_to_table(list_table, request):
-    max_id = max(int(i[0]) for i in list_table)
+    max_id = 0
+    if len(list_table) > 0:
+        max_id = max(int(i[0]) for i in list_table)
     list_table.append([str(max_id+1),
                       request.form['story_title'],
                       request.form['user_story'],
