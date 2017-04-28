@@ -15,7 +15,7 @@ def story():
                            acceptance_criteria='',
                            business_value='',
                            estimation='',
-                           status=1, # to select the rigtht status its number should be passed to the function
+                           status=1,
                            submit_title='Create',
                            action_target='list')
 
@@ -55,6 +55,6 @@ def item_(item_id):
                            acceptance_criteria=list_to_show[3],
                            business_value=list_to_show[4],
                            estimation=list_to_show[5],
-                           status=select_options[list_to_show[6]], # to select the rigtht status its number should be passed to the function
+                           status=select_options[list_to_show[6]],
                            submit_title='Update',
                            action_target='../list')
